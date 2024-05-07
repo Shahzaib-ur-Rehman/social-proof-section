@@ -1,0 +1,256 @@
+:root {
+  --clr-primary-400: hsl(300, 43%, 22%);
+
+  --clr-secondary-400: hsl(333, 80%, 67%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-400: hsl(300, 24%, 96%);
+  --clr-neutral-700: hsl(303, 10%, 53%);
+
+  --ff-base: "League Spartan", sans-serif;
+
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+
+  --fs-100: 0.938rem;
+  --fs-300: 1.125rem;
+  --fs-500: 1.5rem;
+  --fs-900: 2rem;
+
+  --border-radius: 0.5rem;
+}
+
+@media (min-width: 50rem) {
+  :root {
+    --fs-900: 3rem;
+  }
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  font-family: var(--ff-base);
+  font-size: var(--fs-100);
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--clr-neutral-700);
+  background-image: url(/images/bg-pattern-top-desktop.svg), url(/images/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 50% , 50%;
+  background-position: top left, right bottom;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 70rem;
+  margin-inline: auto;
+}
+
+.main-layout {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 50rem) {
+  .main-layout {
+    gap: 3rem;
+    grid-template-columns: 1fr 1.5fr;
+  }
+  .intro {
+    grid-column: 1/2;
+  }
+  .ratings {
+    grid-column: 2/3;
+  }
+  .quotes {
+    grid-column: 1/-1;
+  }
+}
+
+.title {
+  font-size: var(--fs-900);
+  max-width: 12ch;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+
+@media (min-width:50rem) {
+  .intro{
+    text-align: left;
+  }
+  .title {
+    margin-left: 0;
+    margin-bottom: .5rem;
+  }
+}
+
+.ratings {
+  font-weight: var(--fw-semi-bold);
+}
+
+@media (min-width:50rem) {
+  .ratings {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+  }
+  .rating:first-of-type{
+    transform: translateX(-4rem);
+  }
+  .rating:last-of-type{
+    transform: translateX(4rem);
+  }
+}
+
+.ratings > * + * {
+
+  margin-top: 1rem;
+}
+.rating {
+  border-radius: var(--border-radius);
+  background-color: var(--clr-neutral-400);
+  padding: 1rem 3rem;
+}
+@media (min-width: 50rem) {
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.quotes {
+  text-align: left;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+@media ((min-width: 50rem)) {
+  .quotes {
+    flex-direction: row;
+  }
+}
+
+.quote {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  color: var(--clr-neutral-400);
+  background-color: var(--clr-neutral-700);
+}
+@media ((min-width: 50rem)) {
+  .quote:nth-child(2){
+     transform: translateY(2rem);
+  }
+  .quote:nth-child(3){
+    transform: translateY(4rem);
+ }
+}
+.quote-image {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+.name {
+  color: var(--clr-neutral-100);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-semi-bold);
+}
+
+.status {
+  color: var(--clr-secondary-400);
+}
+
+.flex-group {
+  display: flex;
+  gap: 1rem;
+}
