@@ -16,7 +16,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/Shahzaib-ur-Rehman/social-proof-section)
-- Live Site URL: [Social-Proof-Section](https://your-live-site-url.com)
+- Live Site URL: [Social-Proof-Section](https://social-proof-section-sandy-iota.vercel.app/)
 
 ## My process
 
